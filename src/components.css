@@ -71,6 +71,12 @@
   color: var(--vall-accent-strong);
 }
 
+.v-badge-info {
+  border-color: rgba(0, 61, 115, 0.24);
+  background: var(--vall-accent-soft);
+  color: var(--vall-accent);
+}
+
 .v-badge-warning {
   border-color: rgba(154, 103, 0, 0.28);
   background: var(--vall-warning-soft);
