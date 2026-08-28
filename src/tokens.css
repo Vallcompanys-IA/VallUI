@@ -1,0 +1,27 @@
+:root {
+  --vall-ink: #102033;
+  --vall-muted: #5d6b7a;
+  --vall-bg: #e9eff6;
+  --vall-paper: #f8fbfe;
+  --vall-paper-2: #dfe8f2;
+  --vall-surface: rgba(255, 255, 255, 0.92);
+  --vall-surface-strong: #ffffff;
+  --vall-line: #cbd8e6;
+  --vall-accent: #003d73;
+  --vall-accent-strong: #0b5f9e;
+  --vall-accent-soft: #e0edf7;
+  --vall-blue: #087ab9;
+  --vall-warning: #9a6700;
+  --vall-warning-soft: #fff4d8;
+  --vall-danger: #b42318;
+  --vall-danger-soft: #fff4f2;
+  --vall-success: #2d7f58;
+  --vall-success-soft: #e4f4ea;
+  --vall-shadow: 0 18px 42px rgba(16, 32, 51, 0.12);
+  --vall-radius-sm: 10px;
+  --vall-radius-md: 16px;
+  --vall-radius-lg: 22px;
+  --vall-font-sans: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+  --vall-font-display: inherit;
+  --vall-font-mono: Consolas, "Courier New", monospace;
+}

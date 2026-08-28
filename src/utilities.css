@@ -1,0 +1,33 @@
+.v-stack {
+  display: grid;
+  gap: 16px;
+}
+
+.v-cluster {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.v-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.v-grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 720px) {
+  .v-shell {
+    width: min(100% - 24px, 1560px);
+  }
+
+  .v-grid-2 {
+    grid-template-columns: 1fr;
+  }
+}

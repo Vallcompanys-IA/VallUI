@@ -1,0 +1,48 @@
+@import url("./tokens.css");
+
+.v-app {
+  min-height: 100vh;
+  color: var(--vall-ink);
+  background:
+    linear-gradient(180deg, #f8fbfe 0%, var(--vall-bg) 42%, var(--vall-paper-2) 100%);
+  font-family: var(--vall-font-sans);
+}
+
+.v-app,
+.v-app * {
+  box-sizing: border-box;
+}
+
+.v-app h1,
+.v-app h2,
+.v-app h3,
+.v-app p {
+  margin: 0;
+}
+
+.v-app a {
+  color: var(--vall-accent);
+}
+
+.v-shell {
+  width: min(1560px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.v-eyebrow {
+  color: var(--vall-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.v-title {
+  font-family: var(--vall-font-display);
+  letter-spacing: 0;
+}
+
+.v-muted {
+  color: var(--vall-muted);
+}

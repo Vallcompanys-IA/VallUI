@@ -1,0 +1,161 @@
+.v-panel {
+  border: 1px solid var(--vall-line);
+  border-radius: var(--vall-radius-lg);
+  background: var(--vall-surface);
+  box-shadow: var(--vall-shadow);
+  backdrop-filter: blur(12px);
+}
+
+.v-panel-body {
+  padding: 22px;
+}
+
+.v-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--vall-ink);
+  cursor: pointer;
+  font: 800 12px/1 var(--vall-font-sans);
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.v-button:hover {
+  transform: translateY(-1px);
+}
+
+.v-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+  transform: none;
+}
+
+.v-button-primary {
+  background: var(--vall-accent);
+  box-shadow: 0 8px 20px rgba(13, 124, 90, 0.2);
+  color: #fff;
+}
+
+.v-button-secondary {
+  background: var(--vall-ink);
+  color: #fff;
+}
+
+.v-button-ghost {
+  border-color: var(--vall-line);
+  background: transparent;
+}
+
+.v-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border: 1px solid var(--vall-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.52);
+  color: var(--vall-muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.v-badge-success {
+  border-color: rgba(13, 124, 90, 0.24);
+  background: var(--vall-accent-soft);
+  color: var(--vall-accent-strong);
+}
+
+.v-badge-warning {
+  border-color: rgba(218, 131, 30, 0.28);
+  background: rgba(218, 131, 30, 0.12);
+  color: #8b520d;
+}
+
+.v-badge-danger {
+  border-color: rgba(209, 75, 57, 0.28);
+  background: rgba(209, 75, 57, 0.1);
+  color: #8e2a20;
+}
+
+.v-field {
+  display: grid;
+  gap: 7px;
+}
+
+.v-field label {
+  color: var(--vall-muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.v-field input,
+.v-field select,
+.v-field textarea {
+  width: 100%;
+  border: 1px solid var(--vall-line);
+  border-radius: var(--vall-radius-sm);
+  background: var(--vall-surface-strong);
+  color: var(--vall-ink);
+  font: 14px var(--vall-font-sans);
+  padding: 10px 12px;
+}
+
+.v-field input:focus,
+.v-field select:focus,
+.v-field textarea:focus {
+  border-color: var(--vall-accent);
+  outline: 3px solid rgba(13, 124, 90, 0.14);
+}
+
+.v-table-wrap {
+  overflow: auto;
+  border: 1px solid var(--vall-line);
+  border-radius: var(--vall-radius-md);
+}
+
+.v-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.v-table th {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--vall-line);
+  background: rgba(23, 32, 29, 0.04);
+  color: var(--vall-muted);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.v-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--vall-line);
+  vertical-align: top;
+}
+
+.v-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.v-table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.42);
+}
+
+.v-empty {
+  padding: 28px 20px;
+  border: 1px dashed var(--vall-line);
+  border-radius: var(--vall-radius-md);
+  color: var(--vall-muted);
+  text-align: center;
+}
