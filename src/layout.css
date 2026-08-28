@@ -99,6 +99,7 @@
 .v-hero-links .v-button.v-button-ghost:focus-visible {
   border-color: #fff;
   background: #fff;
+  color: var(--vall-accent);
   outline: none;
 }
 
