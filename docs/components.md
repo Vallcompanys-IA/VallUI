@@ -33,7 +33,7 @@ prefijo `v-` para convivir con Bootstrap y con estilos de cada aplicacion.
 ## Toast
 
 ```html
-<script src="/static/vall-ui.js"></script>
+<script src="/vallui/dist/vall-ui.js"></script>
 <script>
   VallUI.toast("Ruta guardada", { variant: "success" });
 </script>

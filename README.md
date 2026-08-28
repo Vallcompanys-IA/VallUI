@@ -41,17 +41,32 @@ docs/
 
 ## Consumo
 
-La primera version no requiere compilacion. Se puede copiar `dist/vall-ui.css`
-y `dist/vall-ui.js`, junto con los archivos `src/` asociados, a la carpeta
-estatica de una aplicacion. Cuando la API visual este estabilizada, se
-publicara mediante releases versionadas.
+VallUI se distribuye mediante releases. Al ser un repositorio publico, cada
+aplicacion puede descargar la ultima release durante su build de Docker y
+servir el contenido dentro de su propia imagen. No se consulta GitHub durante
+la ejecucion ni se mantiene una copia manual del codigo en los proyectos
+consumidores.
+
+El paquete conserva `src/` y `dist/` juntos porque `dist/vall-ui.css` resuelve
+sus imports relativos a `src/`:
+
+```html
+<link rel="stylesheet" href="/vallui/dist/vall-ui.css">
+<script src="/vallui/dist/vall-ui.js"></script>
+```
+
+Para publicar una version, crea y sube un tag con formato `v*`, por ejemplo
+`v0.1.0`. El workflow de release adjunta `vall-ui.tar.gz` automaticamente.
+Los consumidores no necesitan credenciales para descargar VallUI mientras el
+repositorio permanezca publico. Las reglas de seguridad de este repositorio
+estan documentadas en `AGENTS.md`.
 
 ## Toasts
 
-Incluye `dist/vall-ui.js` y usa la API global:
+Incluye `dist/vall-ui.js` desde la ruta compartida y usa la API global:
 
 ```html
-<script src="/static/vall-ui.js"></script>
+<script src="/vallui/dist/vall-ui.js"></script>
 <script>
   VallUI.toast("Guardado correctamente", { variant: "success" });
   VallUI.toast("No se ha podido cargar el listado", {

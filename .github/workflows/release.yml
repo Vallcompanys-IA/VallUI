@@ -1,0 +1,31 @@
+name: Publish VallUI release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout tagged source
+        uses: actions/checkout@v4
+
+      - name: Package VallUI
+        shell: bash
+        run: |
+          mkdir -p package/vall-ui
+          cp -R src dist docs README.md package/vall-ui/
+          tar -czf vall-ui.tar.gz -C package vall-ui
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" vall-ui.tar.gz \
+            --title "VallUI $GITHUB_REF_NAME" \
+            --generate-notes
