@@ -36,13 +36,13 @@
   transform: none;
 }
 
-.v-button-primary {
+.v-button.v-button-primary {
   background: var(--vall-accent);
   box-shadow: 0 8px 20px rgba(0, 61, 115, 0.2);
   color: #fff;
 }
 
-.v-button-secondary {
+.v-button.v-button-secondary {
   background: var(--vall-ink);
   color: #fff;
 }
