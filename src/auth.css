@@ -1,0 +1,72 @@
+.v-auth-shell {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 28px 18px;
+  background: linear-gradient(180deg, #f8fbfe 0%, var(--vall-bg) 42%, var(--vall-paper-2) 100%);
+}
+
+.v-auth-card {
+  width: min(440px, 100%);
+  padding: 30px;
+  border: 1px solid var(--vall-line);
+  border-radius: var(--vall-radius-lg);
+  background: var(--vall-surface-strong);
+  box-shadow: 0 24px 70px rgba(16, 32, 51, 0.14);
+}
+
+.v-auth-card h1 {
+  margin: 8px 0 8px;
+  color: var(--vall-ink);
+  font: 800 clamp(1.6rem, 4vw, 2.2rem)/1.05 var(--vall-font-display);
+  letter-spacing: -0.02em;
+}
+
+.v-auth-subtitle {
+  margin: 0;
+  color: var(--vall-muted);
+  line-height: 1.55;
+}
+
+.v-auth-actions {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.v-auth-actions .v-button {
+  width: 100%;
+}
+
+.v-auth-status {
+  margin-top: 16px;
+  padding: 11px 13px;
+  border: 1px solid var(--vall-line);
+  border-radius: var(--vall-radius-sm);
+  line-height: 1.45;
+}
+
+.v-auth-status-danger {
+  border-color: rgba(180, 35, 24, 0.28);
+  background: var(--vall-danger-soft);
+  color: var(--vall-danger);
+}
+
+.v-auth-status-info {
+  border-color: rgba(0, 61, 115, 0.24);
+  background: var(--vall-accent-soft);
+  color: var(--vall-accent);
+}
+
+.v-auth-card .v-auth-link {
+  color: var(--vall-accent);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .v-auth-card {
+    padding: 24px;
+  }
+}

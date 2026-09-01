@@ -19,6 +19,29 @@ prefijo `v-` para convivir con Bootstrap y con estilos de cada aplicacion.
 <button class="v-button v-button-ghost">Cancelar</button>
 ```
 
+## Autenticacion
+
+El cuadro de inicio de sesion comparte solo la presentacion. La aplicacion
+consumidora mantiene su propia autenticacion, URLs y mensajes.
+
+```html
+<body class="v-app">
+  <main class="v-auth-shell">
+    <section class="v-auth-card">
+      <p class="v-eyebrow">VALLCHAT</p>
+      <h1>Nombre de la aplicacion</h1>
+      <p class="v-auth-subtitle">Acceso corporativo</p>
+      <div class="v-auth-actions">
+        <a class="v-button v-button-primary" href="/auth/login/start">
+          Iniciar sesion con Microsoft
+        </a>
+      </div>
+      <div class="v-auth-status v-auth-status-info">Mensaje informativo</div>
+    </section>
+  </main>
+</body>
+```
+
 ## Tabla
 
 ```html

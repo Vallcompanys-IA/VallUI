@@ -13,6 +13,7 @@ backends.
 ```text
 src/
   tokens.css       Variables visuales comunes.
+  auth.css         Cuadro de autenticacion compartido.
   foundation.css   Base tipografica, superficies y elementos generales.
   layout.css       Shell, hero, navegacion y layouts administrativos.
   forms.css        Formularios, acciones y controles segmentados.
