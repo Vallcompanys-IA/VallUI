@@ -93,3 +93,36 @@ persistente se puede usar `duration: 0`; el resultado de `VallUI.toast()` ofrece
 
 Los componentes son presentacionales. Cada aplicacion decide cuando cambiar el
 estado, abrir un dialogo o mostrar un toast desde su propio JavaScript.
+
+## Navegació amb botons amplis
+
+La variant `v-hero-links-comfortable` conserva els botons de mida de text
+heretada i amplada mínima de 180 px. S’afegeix a `v-hero-links`; la barra
+estàndard manté els seus estils. Per sota de 680 px, els enllaços es desplacen
+horitzontalment i perden l’amplada mínima.
+
+```html
+<nav class="v-hero-links v-hero-links-comfortable" aria-label="Navegació principal">
+  <a class="v-button v-button-ghost" href="/example">Apartat d’exemple</a>
+  <span class="v-hero-status">Entorn <strong>DEV</strong></span>
+</nav>
+```
+
+La variant inclou el tema turquesa quan l’arrel té `data-environment="TEST"`
+i el text de l’indicador de producció amb `data-environment="PROD"`.
+Només canvia la presentació: cada aplicació defineix els enllaços, el nom de
+l’entorn, l’apartat actual i les regles de visibilitat. No cal JavaScript de
+VallUI per utilitzar aquesta barra.
+
+### Apartat actual
+
+Els enllaços es mantenen visibles en visitar-los. L’aplicació consumidora marca
+l’apartat actual amb `aria-current="page"`; VallUI el mostra amb un fons gris
+clar i text del color principal, sense canviar la mida del botó.
+Aquest estat es pot utilitzar tant a la barra estàndard com a la variant ampla.
+
+```html
+<a class="v-button v-button-ghost" href="/example" aria-current="page">
+  Apartat actual
+</a>
+```

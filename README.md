@@ -16,6 +16,7 @@ src/
   auth.css         Cuadro de autenticacion compartido.
   foundation.css   Base tipografica, superficies y elementos generales.
   layout.css       Shell, hero, navegacion y layouts administrativos.
+  navigation.css   Variante de navegacion con botones amplios.
   forms.css        Formularios, acciones y controles segmentados.
   components.css   Componentes visuales reutilizables.
   status.css       Estados, badges y listas.
