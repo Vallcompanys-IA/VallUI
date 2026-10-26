@@ -126,3 +126,11 @@ Aquest estat es pot utilitzar tant a la barra estàndard com a la variant ampla.
   Apartat actual
 </a>
 ```
+
+### Indicador amb desplegable
+
+Un indicador `v-hero-status` pot ser un botó amb `popovertarget`, sense canviar
+la seva aparença ni afegir icones. El desplegable natiu utilitza la classe
+`v-navigation-menu`, un títol opcional `v-navigation-menu-title` i enllaços.
+L’aplicació defineix les opcions, els permisos i la posició del desplegable.
+Les adreces de destinació no formen part de VallUI.

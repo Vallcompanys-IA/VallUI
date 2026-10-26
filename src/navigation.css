@@ -111,3 +111,68 @@
   outline: 2px solid #fff;
   outline-offset: 3px;
 }
+
+.v-hero-links-comfortable button.v-hero-status {
+  width: auto;
+  font-family: inherit;
+  line-height: normal;
+  cursor: pointer;
+}
+
+.v-hero-links-comfortable button.v-hero-status:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.v-navigation-menu[popover] {
+  position: fixed;
+  inset: auto;
+  margin: 0;
+  padding: 6px;
+  max-width: calc(100vw - 24px);
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  border: 1px solid var(--vall-line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--vall-ink);
+  box-shadow: 0 10px 32px rgba(16, 32, 51, 0.18);
+  font-family: var(--vall-font-sans);
+}
+
+.v-navigation-menu-title {
+  margin: 0;
+  padding: 7px 10px;
+  color: var(--vall-muted);
+  font-size: 0.78rem;
+}
+
+.v-navigation-menu a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 10px;
+  border-radius: 7px;
+  color: var(--vall-ink);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.v-navigation-menu a[aria-current] {
+  background: #edf0f4;
+}
+
+.v-navigation-menu a span {
+  color: var(--vall-muted);
+  font-size: 0.76rem;
+  font-weight: 400;
+}
+
+.v-navigation-menu a:hover,
+.v-navigation-menu a:focus-visible {
+  background: var(--vall-accent-soft);
+  outline: 2px solid var(--vall-accent);
+  outline-offset: -2px;
+}
