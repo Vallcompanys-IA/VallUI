@@ -117,8 +117,8 @@ VallUI per utilitzar aquesta barra.
 ### Apartat actual
 
 Els enllaços es mantenen visibles en visitar-los. L’aplicació consumidora marca
-l’apartat actual amb `aria-current="page"`; VallUI el mostra amb un fons gris
-clar i text del color principal, sense canviar la mida del botó.
+l’apartat actual amb `aria-current="page"`; VallUI el mostra amb un fons més
+intens del color principal i un contorn reforçat, sense canviar la mida del botó.
 Aquest estat es pot utilitzar tant a la barra estàndard com a la variant ampla.
 
 ```html
@@ -131,6 +131,8 @@ Aquest estat es pot utilitzar tant a la barra estàndard com a la variant ampla.
 
 Un indicador `v-hero-status` pot ser un botó amb `popovertarget`, sense canviar
 la seva aparença ni afegir icones. El desplegable natiu utilitza la classe
-`v-navigation-menu`, un títol opcional `v-navigation-menu-title` i enllaços.
+`v-panel v-navigation-menu`; el títol reutilitza `v-field-hint` amb
+`v-navigation-menu-title`, i els enllaços reutilitzen `v-list-item`.
+Els colors, la superfície, l’ombra i la tipografia provenen dels estils base.
 L’aplicació defineix les opcions, els permisos i la posició del desplegable.
 Les adreces de destinació no formen part de VallUI.
