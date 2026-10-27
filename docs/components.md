@@ -158,3 +158,28 @@ sessió, entorn o altres controls al final. L’opció `element` d’un item reu
 un enllaç existent i conserva els seus listeners; `domId` estableix el seu ID.
 Un item ocult continua ocult encara que sigui l’actual. Aquesta utilitat no
 conté rutes, autenticació ni crides a serveis de les aplicacions.
+
+### Selectors desplegables
+
+Afegeix `data-v-selects` al contenidor de l’aplicació per activar l’estil compartit.
+La fletxa queda a 16 px de la vora i apunta amunt quan el selector és obert.
+
+```html
+<body class="v-app" data-v-selects>
+  <label for="category">Categoria</label>
+  <select id="category" name="category">
+    <option value="all">Totes</option>
+    <option value="example">Exemple</option>
+  </select>
+</body>
+```
+
+Conserva el `select` original: valors, `input`, `change`, validació, labels,
+opcions desactivades i canvis programàtics. No crea còpies de les opcions ni
+listeners per simular l’estat obert.
+
+En navegadors d’escriptori compatibles amb `appearance: base-select`, el menú
+utilitza l’aparença compartida i una alçada màxima de 280 px. En altres
+navegadors i en dispositius tàctils es conserva el menú natiu; la inversió de
+la fletxa depèn del suport de `:open`. Els selectors múltiples i els que tenen
+`size` no es modifiquen. `data-v-native-select` permet excloure un selector.

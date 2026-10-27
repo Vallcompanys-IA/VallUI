@@ -18,6 +18,7 @@ src/
   layout.css       Shell, hero, navegacion y layouts administrativos.
   navigation.css   Variante de navegacion con botones amplios.
   forms.css        Formularios, acciones y controles segmentados.
+  selects.css      Selectores nativos con flecha y menu compartidos.
   components.css   Componentes visuales reutilizables.
   status.css       Estados, badges y listas.
   dialogs.css      Dialogos nativos y confirmaciones.
