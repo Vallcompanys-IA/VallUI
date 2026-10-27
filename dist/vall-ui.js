@@ -101,7 +101,30 @@
     document.querySelectorAll(".v-toast").forEach(removeToast);
   }
 
+  function renderNavigation(container, items, options) {
+    options = options || {};
+    var links = new Map();
+    var nodes = items.map(function (item) {
+      var link = item.element || document.createElement("a");
+      link.className = item.className || "v-button v-button-ghost";
+      link.href = item.href;
+      link.textContent = item.label;
+      if (item.domId) link.id = item.domId;
+      if (item.hidden !== undefined) link.hidden = Boolean(item.hidden);
+      if (item.id === options.currentId) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+      links.set(item.id, link);
+      return link;
+    });
+    container.replaceChildren.apply(container, nodes.concat(options.trailingNodes || []));
+    return links;
+  }
+
   window.VallUI = window.VallUI || {};
+  window.VallUI.renderNavigation = renderNavigation;
   window.VallUI.toast = toast;
   window.VallUI.dismissToasts = dismissAll;
 })(window, document);

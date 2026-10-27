@@ -26,7 +26,7 @@ src/
   utilities.css    Clases auxiliares pequenas.
 dist/
   vall-ui.css      Entry point para consumir la base visual.
-  vall-ui.js       API JavaScript ligera para avisos.
+  vall-ui.js       API JavaScript ligera para avisos y navegacion.
 docs/
   components.md   Contrato de clases y ejemplos.
 ```

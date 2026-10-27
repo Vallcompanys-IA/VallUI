@@ -136,3 +136,25 @@ la seva aparença ni afegir icones. El desplegable natiu utilitza la classe
 Els colors, la superfície, l’ombra i la tipografia provenen dels estils base.
 L’aplicació defineix les opcions, els permisos i la posició del desplegable.
 Les adreces de destinació no formen part de VallUI.
+
+
+### Navegació compartida amb JavaScript
+
+`VallUI.renderNavigation(container, items, options)` construeix tots els tabs,
+inclòs l’actual, i el destaca amb `aria-current="page"`. No elimina el tab
+seleccionat ni decideix permisos. L’aplicació proporciona la llista completa,
+l’identificador actual i la visibilitat de cada enllaç.
+
+```javascript
+const links = VallUI.renderNavigation(document.querySelector(".v-hero-links"), [
+  { id: "overview", label: "Resum", href: "/overview" },
+  { id: "settings", label: "Configuració", href: "/settings", hidden: !canConfigure },
+], { currentId: "overview", trailingNodes: [sessionIndicator] });
+```
+
+Retorna un `Map` d’enllaços indexat per `id`, perquè el consumidor hi pugui
+aplicar els seus atributs i permisos. `trailingNodes` conserva indicadors de
+sessió, entorn o altres controls al final. L’opció `element` d’un item reutilitza
+un enllaç existent i conserva els seus listeners; `domId` estableix el seu ID.
+Un item ocult continua ocult encara que sigui l’actual. Aquesta utilitat no
+conté rutes, autenticació ni crides a serveis de les aplicacions.
