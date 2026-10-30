@@ -123,6 +123,50 @@
     return links;
   }
 
+  var SELECT_QUERY = '[data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select])';
+  var selectTitles = new WeakMap();
+
+  function updateSelectTitle(select) {
+    if (select.hasAttribute("title") && select.getAttribute("title") !== selectTitles.get(select)) return;
+    var option = select.selectedOptions[0];
+    var title = option ? option.label : "";
+    select.title = title;
+    selectTitles.set(select, title);
+  }
+
+  function enhanceSelects() {
+    var customizable = window.CSS && CSS.supports("appearance", "base-select");
+    document.querySelectorAll(SELECT_QUERY).forEach(function (select) {
+      if (customizable && !select.querySelector(":scope > button")) {
+        var button = document.createElement("button");
+        button.type = "button";
+        button.appendChild(document.createElement("selectedcontent"));
+        select.prepend(button);
+      }
+      updateSelectTitle(select);
+    });
+  }
+
+  function initSelects() {
+    enhanceSelects();
+    // Option lists are often replaced after an API response; keep the native trigger.
+    new MutationObserver(enhanceSelects).observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+    ["pointerover", "focusin", "change"].forEach(function (eventName) {
+      document.addEventListener(eventName, function (event) {
+        if (event.target.matches && event.target.matches(SELECT_QUERY)) updateSelectTitle(event.target);
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSelects, { once: true });
+  } else {
+    initSelects();
+  }
+
   window.VallUI = window.VallUI || {};
   window.VallUI.renderNavigation = renderNavigation;
   window.VallUI.toast = toast;

@@ -178,8 +178,27 @@ Conserva el `select` original: valors, `input`, `change`, validació, labels,
 opcions desactivades i canvis programàtics. No crea còpies de les opcions ni
 listeners per simular l’estat obert.
 
-En navegadors d’escriptori compatibles amb `appearance: base-select`, el menú
+Amb el JavaScript de VallUI, en navegadors d’escriptori compatibles amb `appearance: base-select`, el menú
 utilitza l’aparença compartida i una alçada màxima de 280 px. En altres
 navegadors i en dispositius tàctils es conserva el menú natiu; la inversió de
 la fletxa depèn del suport de `:open`. Els selectors múltiples i els que tenen
 `size` no es modifiquen. `data-v-native-select` permet excloure un selector.
+
+La mida base del selector és de 44 px d’alçada mínima, amb padding de 10 px
+verticals i 14 px horitzontals, lletra de 14 px amb interlineat de 20 px i
+radi de 12 px. Les aplicacions consumidores només han de definir l’amplada
+i la distribució del control; no han de duplicar-ne la mida ni el padding.
+
+Els selectors centren verticalment el text, també quan el consumidor utilitza
+`min-height` amb padding vertical zero. El text seleccionat es trunca amb
+punts suspensius segons l'amplada disponible, sense modificar el valor ni
+el text de les opcions. En ampliar el control es recupera el text complet.
+
+Inclou també `dist/vall-ui.js` per activar automàticament el botó natiu amb
+`selectedcontent` en navegadors compatibles i el títol amb el text complet.
+Es respecten els atributs `title` definits pel consumidor. Les llistes d'opcions
+carregades o substituïdes dinàmicament continuen funcionant. Sense JavaScript,
+es conserva el selector natiu amb truncament, sense el menú personalitzat.
+
+La pàgina `examples/selects.html` permet comprovar controls estrets i amples,
+text centrat, teclat, opcions dinàmiques, canvis programàtics i exclusions.

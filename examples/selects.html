@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>VallUI select layout</title>
+<link rel="stylesheet" href="../dist/vall-ui.css">
+<style>
+body { font:16px Arial; padding:24px; }
+section { margin:20px 0; }
+label { display:block; margin:8px 0; }
+
+
+
+.narrow { width:260px; } .wide { width:1000px; max-width:100%; }
+</style>
+<body class="v-app" data-v-selects>
+<h1>Select layout</h1>
+<section class="printing narrow"><label for="short">Printing: short label, 44px</label><select id="short"><option value="short">Example printer</option><option disabled>Unavailable printer</option><option value="other">Other printer</option></select></section>
+<section class="extraction narrow"><label for="narrow">Extraction: narrow</label><select id="narrow" name="format"><option value="long">EXAMPLE | ExampleDocumentFormat (Orders | Document extraction configuration)</option><option value="short">Short</option></select></section>
+<section class="extraction wide"><label for="wide">Extraction: wide, same label</label><select id="wide"><option value="long">EXAMPLE | ExampleDocumentFormat (Orders | Document extraction configuration)</option><option value="short">Short</option></select></section>
+<section class="printing narrow"><label for="disabled">Disabled</label><select id="disabled" disabled><option>Example printer</option></select></section>
+<section class="printing narrow"><label for="native">Native opt out</label><select id="native" data-v-native-select><option>Example printer</option></select></section>
+<section class="narrow"><label for="multiple">Multiple</label><select id="multiple" multiple><option>One</option><option>Two</option></select></section>
+<script src="../dist/vall-ui.js"></script><button type="button" id="replace-options">Replace options</button>
+<button type="button" id="set-value">Set value programmatically</button>
+<button type="button" id="resize">Toggle narrow width</button>
+<output id="events"></output>
+<script>
+const narrow = document.getElementById("narrow");
+let changes = 0;
+narrow.addEventListener("change", () => document.getElementById("events").textContent = `Changes: ${++changes}; value: ${narrow.value}`);
+document.getElementById("replace-options").onclick = () => narrow.innerHTML = '<option value="replacement">Replacement option with a long label that still needs to fit its container</option><option value="short">Short</option>';
+document.getElementById("set-value").onclick = () => narrow.value = "short";
+document.getElementById("resize").onclick = () => narrow.parentElement.style.width = narrow.parentElement.style.width === "600px" ? "260px" : "600px";
+</script>
+</body></html>
+
+
+

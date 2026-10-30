@@ -1,6 +1,25 @@
 /* Keep the native select, values, validation and keyboard interactions. */
 [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]) {
   appearance: none;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--vall-line, #cbd8e6);
+  border-radius: 12px;
+  background-color: #fff;
+  color: var(--vall-ink, #102033);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: normal;
+  text-transform: none;
+  min-inline-size: 0;
+  max-inline-size: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   padding-inline-end: 40px;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m2 4 4 4 4-4' fill='none' stroke='%23102033' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -12,18 +31,48 @@
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='m2 8 4-4 4 4' fill='none' stroke='%23102033' stroke-width='1.7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 }
 
-/* Retain operating-system pickers on touch devices. */
+[data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]):focus-visible {
+  outline: 3px solid var(--vall-accent-soft, #e0edf7);
+  outline-offset: 1px;
+  border-color: var(--vall-accent, #003d73);
+}
+
+[data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]):disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+
+/* Retain operating-system pickers on touch devices and without enhancement. */
 @supports (appearance: base-select) {
   @media (hover: hover) and (pointer: fine) {
-    [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]),
-    [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select])::picker(select) {
+    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select]),
+    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select])::picker(select) {
       appearance: base-select;
     }
 
-    [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]),
-    [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select]):open {
+    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select]) {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       padding-inline-end: 16px;
       background-image: none;
+    }
+
+    [data-v-selects] select > button:has(> selectedcontent) {
+      all: unset;
+      display: flex;
+      align-items: center;
+      align-self: stretch;
+      flex: 1;
+      min-inline-size: 0;
+      overflow: hidden;
+    }
+
+    [data-v-selects] selectedcontent {
+      display: block;
+      min-inline-size: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
       white-space: nowrap;
     }
 
@@ -70,5 +119,5 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-v-selects] select::picker-icon { transition: none; }
+  [data-v-selects] select:not([multiple]):not([size]):not([data-v-native-select])::picker-icon { transition: none; }
 }
