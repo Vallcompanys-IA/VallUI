@@ -50,7 +50,8 @@
       appearance: base-select;
     }
 
-    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select]) {
+    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select]),
+    [data-v-selects] select:has(> button > selectedcontent):not([multiple]):not([size]):not([data-v-native-select]):open {
       display: inline-flex;
       align-items: center;
       gap: 12px;
